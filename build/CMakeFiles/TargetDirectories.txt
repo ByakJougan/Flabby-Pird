@@ -1,0 +1,3 @@
+C:/Users/DAO BA THANH/Desktop/Something Stupid/P/Calculator/build/CMakeFiles/game.dir
+C:/Users/DAO BA THANH/Desktop/Something Stupid/P/Calculator/build/CMakeFiles/edit_cache.dir
+C:/Users/DAO BA THANH/Desktop/Something Stupid/P/Calculator/build/CMakeFiles/rebuild_cache.dir
