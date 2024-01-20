@@ -1,31 +1,47 @@
 *.d
 
 *.slo
+
 *.lo
+
 *.o
+
 *.obj
 
 *.gch
+
 *.pch
 
 *.so
+
 *.dylib
+
 *.dll
 
 *.mod
+
 *.smod
 
 *.lai
+
 *.la
+
 *.a
+
 *.lib
 
 *.exe
+
 *.out
+
 *.app
 
 .DS_Store
+
 *.sh
+
 build/
+
 .vscode/
+
 *.txt

@@ -1,13 +1,13 @@
-#include "header/calculator.hpp"
+#include "header/game.hpp"
 
-Calculator::Calculator() : widthWindow(1300), heightWindow(900) {
-    window = new sf::RenderWindow(sf::VideoMode(widthWindow, heightWindow), "Calculator");
+Game::Game() : widthWindow(1500), heightWindow(1300) {
+    window = new sf::RenderWindow(sf::VideoMode(widthWindow, heightWindow), "Game");
     window->setFramerateLimit(60);
 
     states.push(new Entry(window, &states));
 }
 
-Calculator::~Calculator() {
+Game::~Game() {
     while (!states.empty()) 
     {
         State* tmp =  states.top();
@@ -19,7 +19,7 @@ Calculator::~Calculator() {
     std::cout << "Deallocated ok!\n";
 }
 
-void Calculator::run() {
+void Game::run() {
     while (window->isOpen()) 
     {
         handleEvent();
@@ -28,14 +28,14 @@ void Calculator::run() {
     }
 }
 
-void Calculator::handleEvent() {
+void Game::handleEvent() {
     if (!states.empty()) 
         states.top()->handleEvent();
     else 
         window->close();
 }
 
-void Calculator::update() 
+void Game::update() 
 {
     if (!states.empty()) 
         states.top()->update();
@@ -43,7 +43,7 @@ void Calculator::update()
         window->close();
 }
 
-void Calculator::render() 
+void Game::render() 
 {
     window->clear(sf::Color::White);
     if (!states.empty()) 

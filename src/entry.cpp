@@ -8,9 +8,9 @@ Entry::Entry(sf::RenderWindow* window, std::stack <State*>* states) : window(win
 
 void Entry::initShape() 
 {
-    shape.setSize(sf::Vector2f(100, 100));
-    shape.setFillColor(sf::Color::Green);
-    shape.setPosition(sf::Vector2f(100, 100));
+    backgroundTexture.loadFromFile("../resources/res/background.png");
+    backgroundImage.setTexture(backgroundTexture);
+    backgroundImage.setPosition(0, 0);
 }
 
 void Entry::handleEvent() 
@@ -26,10 +26,6 @@ void Entry::handleEvent()
                 if (event.mouseButton.button == sf::Mouse::Left) 
                 {
                     mousePosition = sf::Mouse::getPosition(*window);
-                    if (shape.getGlobalBounds().contains(mousePosition.x, mousePosition.y)) 
-                    {
-                        std::cout << "Clicked!\n";
-                    }
                 }
                 break ;
             case sf::Event::KeyPressed :
@@ -45,12 +41,10 @@ void Entry::handleEvent()
 
 void Entry::update() 
 {
-    if(shape.getGlobalBounds().contains(mousePosition.x, mousePosition.y)) 
-        shape.setFillColor(sf::Color(255, 255, 255, 255));
-    else
-        shape.setFillColor(sf::Color(255, 255, 255, 200));
+
 }
 
-void Entry::render() {
-    window->draw(shape);
+void Entry::render() 
+{
+    window->draw(backgroundImage);
 }

@@ -6,7 +6,7 @@
 #include <stack>
 #include <SFML/Graphics.hpp>
 
-class Calculator;
+class Game;
 
 class Entry : public State {
     public :
@@ -23,7 +23,8 @@ class Entry : public State {
         sf::Event event;
         sf::Vector2i mousePosition;
 
-        sf::RectangleShape shape;
+        sf::Texture backgroundTexture;
+        sf::Sprite backgroundImage;
 };
 
 #endif

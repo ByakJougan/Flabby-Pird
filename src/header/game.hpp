@@ -1,5 +1,5 @@
-#ifndef CALCULATOR_HPP
-#define CALCULATOR_HPP
+#ifndef GAME_HPP
+#define GAME_HPP
 
 #include <iostream>
 #include <stack>
@@ -7,11 +7,10 @@
 #include "state.hpp"
 #include "entry.hpp"
 
-class Calculator 
-{
+class Game {
     public :
-        Calculator();
-        ~Calculator();
+        Game();
+        ~Game();
         void run();
 
     private :
@@ -20,7 +19,7 @@ class Calculator
         sf::Event event;
         sf::RenderWindow* window;
         std::stack <State*> states;
-
+        
         void handleEvent();
         void update();
         void render();
